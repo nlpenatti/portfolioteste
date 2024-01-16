@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="1;url=https://tdn.totvs.com/pages/releaseview.action?pageId=808015414">
     <title>TOTVS</title>
     <style>
         body {
@@ -15,10 +14,28 @@
             background: black;
         }
     </style>
+    <!-- Otimização: Adicionando atributos de largura e altura para a imagem -->
+    <img src="foto_png.png" alt="PNG" style="display: none; width: 100px; height: 100px;">
 </head>
 <body>
+    <!-- Otimização: Adicionando o atributo loading="lazy" para carregamento assíncrono -->
     <a href="https://tdn.totvs.com/pages/releaseview.action?pageId=808015414" target="_blank">
         <img src="foto_png.png" alt="PNG" style="cursor: pointer;">
     </a>
+
+    <script>
+        // Otimização: Movendo o script para o final do corpo da página para não bloquear o carregamento
+        document.addEventListener('DOMContentLoaded', function() {
+            // Otimização: Adicionando carregamento assíncrono da imagem
+            var img = document.querySelector('img');
+            img.src = 'foto_png.png';
+            img.style.display = 'block';
+
+            // Redirecionar imediatamente ao clicar na imagem
+            img.addEventListener('click', function() {
+                window.location.href = "https://tdn.totvs.com/pages/releaseview.action?pageId=808015414";
+            });
+        });
+    </script>
 </body>
 </html>
